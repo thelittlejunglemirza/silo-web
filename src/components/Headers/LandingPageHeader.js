@@ -44,7 +44,7 @@ function LandingPageHeader() {
     <>
       <div
         style={{
-          backgroundImage: "url(" + require("assets/img/daniel-olahh.jpg") + ")"
+          backgroundImage: "url(" + require("assets/img/silobg.jpg") + ")"
         }}
         className="page-header"
         data-parallax={true}
@@ -53,8 +53,8 @@ function LandingPageHeader() {
         <div className="filter" />
         <Container>
           <div className="motto text-center">
-            <h1>Example page</h1>
-            <h3>Start designing your landing page here.</h3>
+            <h1>This Is Silo</h1>
+            <h3>Optimizing the world one constraint at a time.</h3>
             <br />
             <Button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -67,7 +67,7 @@ function LandingPageHeader() {
               Watch video
             </Button>
             <Button className="btn-round" color="neutral" type="button" outline>
-              Download
+              Contact
             </Button>
           </div>
         </Container>
