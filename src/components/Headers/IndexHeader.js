@@ -54,7 +54,7 @@ function LandingPageHeader() {
         <Container>
           <div className="motto text-center">
             <h1>This Is Silo</h1>
-            <h3>Optimizing the world one constraint at a time.</h3>
+            <h3>Optimizing the World One Constraint at a Time.</h3>
             <br />
             <Button
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
