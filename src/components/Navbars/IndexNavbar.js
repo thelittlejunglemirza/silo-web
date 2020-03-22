@@ -17,11 +17,12 @@
 
 */
 import React from "react";
+import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
+
 // reactstrap components
 import {
-  Button,
   Collapse,
   NavbarBrand,
   Navbar,
@@ -31,7 +32,7 @@ import {
   Container
 } from "reactstrap";
 
-function IndexNavbar() {
+function ExamplesNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
@@ -62,16 +63,21 @@ function IndexNavbar() {
     };
   });
   return (
-    <Navbar className={classnames("fixed-top", navbarColor)} expand="lg">
+    <Navbar
+      className={classnames("fixed-top", navbarColor)}
+      color-on-scroll="300"
+      expand="lg"
+    >
       <Container>
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            href="/index"
+            to="/index"
             target="_blank"
             title="Coded by Creative Tim"
+            tag={Link}
           >
-            Paper Kit React
+            Software Silo
           </NavbarBrand>
           <button
             aria-expanded={navbarCollapse}
@@ -92,17 +98,30 @@ function IndexNavbar() {
         >
           <Nav navbar>
             <NavItem>
+              <NavLink to="/index" tag={Link}>
+                <i className="nc-icon nc-layout-11" /> Projects
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-examples-navbar"
+                target="_blank"
+              >
+                <i className="nc-icon nc-book-bookmark" /> Testemonials
+              </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink
                 data-placement="bottom"
                 href="https://twitter.com/CreativeTim?ref=creativetim"
                 target="_blank"
-                title="Follow us on Twitter"
+                title="Follow us on LinkedIn"
               >
-                <i className="fa fa-twitter" />
-                <p className="d-lg-none">Twitter</p>
+                <i className="fa fa-linkedin" />
+                <p className="d-lg-none">LinkedIn</p>
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink
                 data-placement="bottom"
                 href="https://www.facebook.com/CreativeTim?ref=creativetim"
@@ -112,7 +131,7 @@ function IndexNavbar() {
                 <i className="fa fa-facebook-square" />
                 <p className="d-lg-none">Facebook</p>
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink
                 data-placement="bottom"
@@ -124,36 +143,17 @@ function IndexNavbar() {
                 <p className="d-lg-none">Instagram</p>
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink
                 data-placement="bottom"
-                href="https://www.github.com/CreativeTimOfficial/paper-kit-react?ref=creativetim"
+                href="https://www.github.com/CreativeTimOfficial?ref=creativetim"
                 target="_blank"
                 title="Star on GitHub"
               >
                 <i className="fa fa-github" />
                 <p className="d-lg-none">GitHub</p>
               </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-index-navbar"
-                target="_blank"
-              >
-                <i className="nc-icon nc-book-bookmark" /> Documentation
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <Button
-                className="btn-round"
-                color="danger"
-                href="#pablo"
-                target="_blank"
-                disabled
-              >
-                Upgrade to Pro
-              </Button>
-            </NavItem>
+            </NavItem> */}
           </Nav>
         </Collapse>
       </Container>
@@ -161,4 +161,4 @@ function IndexNavbar() {
   );
 }
 
-export default IndexNavbar;
+export default ExamplesNavbar;
