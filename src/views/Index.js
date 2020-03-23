@@ -41,8 +41,8 @@ import LandingPageHeader from "components/Headers/IndexHeader.js";
 import DemoFooter from "components/Footers/Footer.js";
 import emailjs from 'emailjs-com';
 import ContactUs from 'components/Forms/ContactUs.js';
-
 import Projects from 'components/Projects/Projects.js';
+import {templateId, userId} from '../env.js';
 
 class LandingPage extends React.Component {
     constructor(props) {
@@ -60,7 +60,7 @@ class LandingPage extends React.Component {
     handleEmailFormSubmit = (event) => {
         event.preventDefault();
 
-        emailjs.sendForm('default_service', 'template_1KGjDScA', event.target, 'user_v0igoBzsR3441mcbVQAkx').then((result) => {
+        emailjs.sendForm('default_service', templateId, event.target, userId).then((result) => {
             alert('sent');
             this.setState({emailSent: true})
         }, (error) => {
