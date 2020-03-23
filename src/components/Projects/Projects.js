@@ -89,7 +89,7 @@ class Projects extends Component {
                 onExited={() => this.setState({animating: false})}
                 key={item.src}
                 >
-                <img src={item.src} alt={item.altText}  style={{height: "75vh", width: "70vw", marginLeft: "8.5vw"}}  />
+                <img src={item.src} alt={item.altText}  style={{height: "75vh", width: "40vw", marginLeft: "8.5vw"}}  />
                 {/* <CarouselCaption captionText={item.caption} captionHeader={item.caption} /> */}
             </CarouselItem>
         );
@@ -98,20 +98,18 @@ class Projects extends Component {
     render() {
         return(
                 <>
-                    <Row>
-                    <Col className="ml-auto mr-auto" md={{ size: 12, offset: 3 }}>
-                    <Carousel
-                    activeIndex={this.state.activeIndex}
-                    next={this.next}
-                    previous={this.previous}
-                    >
-                    <CarouselIndicators items={items} activeIndex={this.state.activeIndex} onClickHandler={this.goToIndex.bind(this)} />
-                    {this.slides}
-                    <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                    <CarouselControl direction="next" directionText="Next" onClickHandler={this.next.bind(this)} />
-                    </Carousel>
+                    <Col style={{width: "100vw"}}>
+                        <Carousel
+                        activeIndex={this.state.activeIndex}
+                        next={this.next}
+                        previous={this.previous}
+                        >
+                            <CarouselIndicators items={items} activeIndex={this.state.activeIndex} onClickHandler={this.goToIndex.bind(this)} />
+                            {this.slides}
+                            <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                            <CarouselControl direction="next" directionText="Next" onClickHandler={this.next.bind(this)} />
+                        </Carousel>
                     </Col>
-                    </Row>
                 </>
             );
     }
