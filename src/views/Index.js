@@ -40,6 +40,10 @@ import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
 import LandingPageHeader from "components/Headers/IndexHeader.js";
 import DemoFooter from "components/Footers/Footer.js";
 
+import {ScrollLocky} from "react-scroll-locky"
+
+import Projects from "components/Projects/Projects.js"
+
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -55,7 +59,10 @@ function LandingPage() {
       <div className="main">
         <div className="section text-center">
           <Container>
-            <Row>
+          <Row>
+            <Projects />
+          </Row>
+            {/* <Row>
               <Col className="ml-auto mr-auto" md="8">
                 <h2 className="title">Let's talk product</h2>
                 <h5 className="description">
@@ -75,10 +82,10 @@ function LandingPage() {
                   See Details
                 </Button>
               </Col>
-            </Row>
-            <br />
-            <br />
-            <Row>
+            </Row> */}
+            {/* <br />
+            <br /> */}
+            {/* <Row>
               <Col md="3">
                 <div className="info">
                   <div className="icon icon-info">
@@ -147,7 +154,7 @@ function LandingPage() {
                   </div>
                 </div>
               </Col>
-            </Row>
+            </Row> */}
           </Container>
         </div>
         <div className="section section-dark text-center">
