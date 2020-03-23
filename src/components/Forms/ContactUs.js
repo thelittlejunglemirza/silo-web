@@ -42,7 +42,7 @@ class ContactUs extends React.Component {
 
     render() {
         return (
-            <div className="section landing-section">
+            <div className="section section-dark landing-section" style={{paddingTop: "0"}}>
                 <Container>
                     <Row>
                         <Col className="ml-auto mr-auto" md="8">
@@ -55,7 +55,7 @@ class ContactUs extends React.Component {
                                 </div>
                             ) : (
                                 <div>
-                                    <h2 className="text-center">Keep in touch?</h2>
+                                    {/* <h2 className="text-center">Keep in touch?</h2> */}
                                     <Form className="contact-form"
                                         onSubmit={
                                             this.props.handleEmailFormSubmit

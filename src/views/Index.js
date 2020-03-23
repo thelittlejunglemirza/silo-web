@@ -42,6 +42,8 @@ import DemoFooter from "components/Footers/Footer.js";
 import emailjs from 'emailjs-com';
 import ContactUs from 'components/Forms/ContactUs.js';
 
+import Projects from 'components/Projects/Projects.js';
+
 class LandingPage extends React.Component {
     constructor(props) {
         super(props);
@@ -72,7 +74,7 @@ class LandingPage extends React.Component {
                 <ExamplesNavbar/>
                 <LandingPageHeader/>
                 <div className="main">
-                    <div className="section text-center">
+                    <div className="section section-dark text-center" style={{height: "100vh"}}>
                         <Container>
                             <Row>
                                 <Col className="ml-auto mr-auto" md="8">
@@ -163,9 +165,16 @@ class LandingPage extends React.Component {
                             </Row>
                         </Container>
                     </div>
-                    <div className="section section-dark text-center">
+                    <div className="section section-white text-center" style={{height: "100vh"}}>
+                    <Container>
+                      <Row>
+                        <Projects/>
+                      </Row>
+                    </Container>
+                    </div>
+                    <div className="section section-dark text-center" style={{paddingBottom: "0px"}}>
                         <Container>
-                            <h2 className="title">Let's talk about us</h2>
+                            <h2 className="title">Say Hello!</h2>
                             <Row>
                                 <Col md="4">
                                     <Card className="card-profile card-plain">
@@ -191,31 +200,9 @@ class LandingPage extends React.Component {
                                                 </div>
                                             </a>
                                             <p className="card-description text-center">
-                                                Teamwork is so important that it is virtually impossible
-                                                                                                                        for you to reach the heights of your capabilities or make
-                                                                                                                        the money that you want without becoming very good at it.
+                                                Teamwork is so important that it is virtual.
                                             </p>
                                         </CardBody>
-                                        <CardFooter className="text-center">
-                                            <Button className="btn-just-icon btn-neutral" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-twitter"/>
-                                            </Button>
-                                            <Button className="btn-just-icon btn-neutral ml-1" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-google-plus"/>
-                                            </Button>
-                                            <Button className="btn-just-icon btn-neutral ml-1" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-linkedin"/>
-                                            </Button>
-                                        </CardFooter>
                                     </Card>
                                 </Col>
                                 <Col md="4">
@@ -242,32 +229,9 @@ class LandingPage extends React.Component {
                                                 </div>
                                             </a>
                                             <p className="card-description text-center">
-                                                A group becomes a team when each member is sure enough of
-                                                                                                                        himself and his contribution to praise the skill of the
-                                                                                                                        others. No one can whistle a symphony. It takes an
-                                                                                                                        orchestra to play it.
+                                                A group becomes a team when each member is sure enough.
                                             </p>
                                         </CardBody>
-                                        <CardFooter className="text-center">
-                                            <Button className="btn-just-icon btn-neutral" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-twitter"/>
-                                            </Button>
-                                            <Button className="btn-just-icon btn-neutral ml-1" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-google-plus"/>
-                                            </Button>
-                                            <Button className="btn-just-icon btn-neutral ml-1" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-linkedin"/>
-                                            </Button>
-                                        </CardFooter>
                                     </Card>
                                 </Col>
                                 <Col md="4">
@@ -294,43 +258,20 @@ class LandingPage extends React.Component {
                                                 </div>
                                             </a>
                                             <p className="card-description text-center">
-                                                The strength of the team is each individual member. The
-                                                                                                                        strength of each member is the team. If you can laugh
-                                                                                                                        together, you can work together, silence isn’t golden,
-                                                                                                                        it’s deadly.
+                                                The strength of the team is the strength of each member is the team.
                                             </p>
                                         </CardBody>
-                                        <CardFooter className="text-center">
-                                            <Button className="btn-just-icon btn-neutral" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-twitter"/>
-                                            </Button>
-                                            <Button className="btn-just-icon btn-neutral ml-1" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-google-plus"/>
-                                            </Button>
-                                            <Button className="btn-just-icon btn-neutral ml-1" color="link" href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <i className="fa fa-linkedin"/>
-                                            </Button>
-                                        </CardFooter>
                                     </Card>
                                 </Col>
                             </Row>
                         </Container>
                     </div>
-                    <ContactUs handleEmailFormSubmit={
-                            (e) => this.handleEmailFormSubmit(e)
-                        }
-                        emailSent={
-                            this.state.emailSent
-                        }/>
+                      <ContactUs handleEmailFormSubmit={
+                          (e) => this.handleEmailFormSubmit(e)
+                      }
+                      emailSent={
+                          this.state.emailSent
+                      }/>
                 </div>
                 <DemoFooter/>
             </div>
