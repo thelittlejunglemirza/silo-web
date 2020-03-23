@@ -102,14 +102,14 @@ function ExamplesNavbar() {
                 <i className="nc-icon nc-layout-11" /> Projects
               </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink
                 href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-examples-navbar"
                 target="_blank"
               >
                 <i className="nc-icon nc-book-bookmark" /> Testemonials
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink
                 data-placement="bottom"
@@ -132,7 +132,7 @@ function ExamplesNavbar() {
                 <p className="d-lg-none">Facebook</p>
               </NavLink>
             </NavItem> */}
-            <NavItem>
+            {/* <NavItem>
               <NavLink
                 data-placement="bottom"
                 href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
@@ -142,7 +142,7 @@ function ExamplesNavbar() {
                 <i className="fa fa-instagram" />
                 <p className="d-lg-none">Instagram</p>
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             {/* <NavItem>
               <NavLink
                 data-placement="bottom"
