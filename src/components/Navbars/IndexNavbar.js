@@ -32,7 +32,7 @@ import {
   Container
 } from "reactstrap";
 
-function ExamplesNavbar() {
+function ExamplesNavbar(props) {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
 
@@ -97,7 +97,7 @@ function ExamplesNavbar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
-            <NavItem>
+            <NavItem onClick={props.scrollHandler}>
               <NavLink to="/index" tag={Link}>
                 <i className="nc-icon nc-layout-11" /> Projects
               </NavLink>
