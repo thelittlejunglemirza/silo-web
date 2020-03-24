@@ -26,7 +26,7 @@ import {Button, Container} from "reactstrap";
 class LandingPageHeader extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.pageHeader = React.createRef();
 
         if (window.innerWidth < 991) {
@@ -51,12 +51,25 @@ class LandingPageHeader extends React.Component {
                     }
                     className="page-header"
                     data-parallax={true}
-                    ref={this.LandingPageHeaderpageHeader}>
+                    ref={
+                        this.LandingPageHeaderpageHeader
+                }>
                     <div className="filter"/>
                     <Container>
                         <div className="motto text-center">
-                            <h1>This Is Silo</h1>
-                            <h3>Optimizing the World One Constraint at a Time.</h3>
+                            <h1>This Is 
+                                <img alt="..."
+                                    src={
+                                        require("assets/img/SiloLogo.png")
+                                    }
+                                    style={
+                                        {
+                                            height: "6vh",
+                                            marginBottom: 25,
+                                            marginLeft: 5
+                                        }
+                                    }/></h1>
+                            <h3 style={{marginTop:0}}>Optimizing the World One Constraint at a Time.</h3>
                             <br/> {/* <Button
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 className="btn-round mr-1"

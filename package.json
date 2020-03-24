@@ -21,6 +21,7 @@
     "react-router-dom": "5.0.1",
     "react-scripts": "3.0.1",
     "react-scroll-locky": "^1.5.0",
+    "react-visibility-sensor": "^5.1.1",
     "reactstrap": "8.0.0"
   },
   "scripts": {

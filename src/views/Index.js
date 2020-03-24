@@ -30,7 +30,7 @@ import IndexHeader from "components/Headers/IndexHeader.js";
 import Footer from "components/Footers/Footer.js";
 import ContactUs from 'components/Forms/ContactUs.js';
 import Projects from 'components/Projects/Projects.js';
-import Services from 'components/Services.js'
+import Services from 'components/Services/Services.js'
 
 class LandingPage extends React.Component {
     constructor(props) {
