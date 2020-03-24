@@ -37,6 +37,7 @@ class LandingPage extends React.Component {
         super(props);
         this.contactRef=null //used for scrolling to contact form
         this.projectsRef=null //used for scrolling to projects page
+        this.servicesRef=null //used for scrolling to services page
 
         // These next three lines might be unessary
         document.documentElement.classList.remove("nav-open");
@@ -45,15 +46,17 @@ class LandingPage extends React.Component {
     }
 
     // scroll handlers
-    scrollToContactRef = () => window.scrollTo(0, this.contactRef.offsetTop)
+    scrollToServicesRef = () => window.scrollTo(0, this.servicesRef.offsetTop)
     scrollToProjectRef = () => window.scrollTo(0, this.projectsRef.offsetTop)
+    scrollToContactRef = () => window.scrollTo(0, this.contactRef.offsetTop)
 
     render() {
         return (
             <div>
-                <IndexNavbar scrollHandler={this.scrollToProjectRef}/>
+                <IndexNavbar scrollHandler0={this.scrollToServicesRef} scrollHandler1={this.scrollToProjectRef} scrollHandler2={this.scrollToContactRef}/>
                 <IndexHeader scrollHandler={this.scrollToContactRef}/>
                 <div className="main">
+                    <div ref={ (ref) => this.servicesRef=ref }></div>
                     <Services/>
                     <div ref={ (ref) => this.projectsRef=ref }></div>
                     <div className="section section-white text-center"

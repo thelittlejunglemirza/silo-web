@@ -81,25 +81,29 @@ function ExamplesNavbar(props) {
                 <Collapse className="justify-content-end" navbar
                     isOpen={navbarCollapse}>
                     <Nav navbar>
-                        <NavItem>
-                            <NavLink href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-examples-navbar" target="_blank">
+                        <NavItem onClick={
+                            props.scrollHandler0
+                        }>
+                            <NavLink tag={Link}>
                                 <i className="nc-icon nc-key-25"/><span style={
                                     {paddingLeft: 5}
                                 }>Services</span>
                             </NavLink>
                         </NavItem>
                         <NavItem onClick={
-                            props.scrollHandler
+                            props.scrollHandler1
                         }>
-                            <NavLink to="/index"
+                            <NavLink 
                                 tag={Link}>
                                 <i className="nc-icon nc-spaceship"/><span style={
                                     {paddingLeft: 5}
                                 }>Projects</span>
                             </NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-examples-navbar" target="_blank">
+                        <NavItem onClick={
+                            props.scrollHandler2
+                        }>
+                            <NavLink tag={Link}>
                                 <i className="nc-icon nc-send"/><span style={
                                     {paddingLeft: 5}
                                 }>Contact</span>
