@@ -6,9 +6,8 @@ import FadeIn from 'react-fade-in';
 // import CardContainer from 'components/Services/FlipCard.js'
 import VisibilitySensor from 'react-visibility-sensor';
 
-// const text0 = 'At Software Silo we have developed our expertise in multiple technologies, as a core development organization. We work alongside our customers throughout the entire process, identifying their needs at the outset and defining functionalities until the product is complete. Our aim is to deliver desired results.'
-// const text1 = 'We develop native, web, and cross-platform custom applications for customer engaging solutions, enterprise & business workflow optimizations, useful & precise utilities, captivating educational platforms, lifestyle & entertainment access plus much more. Whatever the customer desires, we deliver.';
-// const text2 = "An efficient and well-managed IT implementation can bring a competitive advantage. Intelligent workflows can help modernize your legacy systems and make your business run efficiently. Our services utilize artificial intelligence, automation and the Internet of Things (IoT) to co-create custom workflows and build tailor-made solutions that fit your industry and audiences."
+const text0 = 'Software Silo has the resources to make your ideas a reality. Our team is comprised of experts in all areas of the development cycle, which allows us to create innovative solutions at an affordable cost.  We work alongside our customers every step of the project, creating strong rapport and an opportunity for long-term partnerships.'
+const text1 = 'At Software Silo we have developed our expertise in multiple technologies as a core development organization. We create custom cross-platform mobile and web applications for customer engaging solutions. Our services utilize artificial intelligence and UX design to build tailor-made solutions that fit your industry and audiences.'
 // const textAnimationTime = 5000;
 
 class Services extends React.Component {
@@ -27,19 +26,11 @@ class Services extends React.Component {
 
     componentIsVisible(isVisible, num) {
         if ((num === 0) && !this.state.hasRendered0 && isVisible) {
-            // this.conductor();
             this.setState({visibleFlag0: true, hasRendered0: true})
         } else if ((num === 1) && !this.state.hasRendered1 && isVisible) {
             this.setState({visibleFlag1: true, hasRendered1: true})
         }
     }
-
-    // conductor() {
-    //     var tempTextNum = this.state.textNum + 1;
-    //     this.setState({textNum: tempTextNum})
-
-    //     setTimeout(() => this.conductor(), textAnimationTime); // timeout in msec
-    // }
 
     render() {
         return (<div className="section section-dark text-center"
@@ -63,7 +54,7 @@ class Services extends React.Component {
                                         <h2 className="title">Our Model</h2>
                                         <div className="description">
                                             <p>
-                                                Larger, yet dramatically thinner. More powerful, but remarkably power efficient. Larger, yet dramatically thinner. More powerful, but remarkably power efficient. 
+                                                {text0}
                                             </p>
                                         </div>
                                     </div>
@@ -151,12 +142,12 @@ class Services extends React.Component {
                         ? (<>
                             <Row>
                                 <Col md='6'>
-                                    <FadeIn delay={400}>
+                                    <FadeIn>
                                         <div>
-                                            <h2 className="title">Our Expertise</h2>
+                                            <h2 className="title" style={{marginTop:10}}>Our Expertise</h2>
                                             <div className="description">
                                                 <p>
-                                                    Larger, yet dramatically thinner. More powerful, but remarkably power efficient. Larger, yet dramatically thinner. More powerful, but remarkably power efficient. Larger, yet dramatically thinner. More powerful, but remarkably power efficient. Larger, yet dramatically thinner. More powerful, but remarkably power efficient.
+                                                    {text1}
                                                 </p>
                                             </div>
                                         </div>
@@ -165,7 +156,7 @@ class Services extends React.Component {
                                 <Col md='6'>
                                     <Row>
                                         <Col md="6">
-                                            <FadeIn>
+                                            <FadeIn delay={300}>
                                                 <div className="info">
                                                     <div className="icon icon-info">
                                                         <i class="fas fa-mobile"></i>
@@ -180,7 +171,7 @@ class Services extends React.Component {
                                             </FadeIn>
                                         </Col>
                                         <Col md="6">
-                                            <FadeIn delay={300}>
+                                            <FadeIn delay={400}>
                                                 <div className="info">
                                                     <div className="icon icon-info">
                                                         <i class="fas fa-laptop"></i>
@@ -197,7 +188,7 @@ class Services extends React.Component {
                                     </Row>
                                     <Row>
                                         <Col md="6">
-                                            <FadeIn>
+                                            <FadeIn delay={300}>
                                                 <div className="info" style={{paddingTop: '6vh'}}>
                                                     <div className="icon icon-info">
                                                         <i class="fas fa-paint-brush"></i>
@@ -212,13 +203,13 @@ class Services extends React.Component {
                                             </FadeIn>
                                         </Col>
                                         <Col md="6">
-                                            <FadeIn delay={300}>
+                                            <FadeIn delay={400}>
                                                 <div className="info" style={{paddingTop: '6vh'}}>
                                                     <div className="icon icon-info">
                                                         <i class="fas fa-brain"></i>
                                                     </div>
                                                     <div className="description">
-                                                        <h4 className="info-title" style={{marginTop: 0}}>Machine Learning</h4>
+                                                        <h4 className="info-title" style={{marginTop: 0}}>Artificial Intelligence</h4>
                                                         {/* <p>
                                                             Find unique and handmade delightful designs related items directly from our sellers.
                                                         </p> */}
@@ -229,9 +220,7 @@ class Services extends React.Component {
                                     </Row>
 
                                 </Col>
-
                             </Row>
-                            
                             </>
                         )
                         :(<VisibilitySensor onChange={

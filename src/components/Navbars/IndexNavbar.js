@@ -64,8 +64,10 @@ function ExamplesNavbar(props) {
             expand="lg">
             <Container>
                 <div className="navbar-translate">
-                    <NavbarBrand data-placement="bottom" to="/index" target="_blank" title="Coded by Software Silo"
-                        tag={Link}>
+                    <NavbarBrand data-placement="bottom" title="Coded by Software Silo"
+                        tag={Link}
+                        onClick={() => {window.scrollTo(0, 0);}}
+                    >
                         Software Silo
                     </NavbarBrand>
                     <button aria-expanded={navbarCollapse}
