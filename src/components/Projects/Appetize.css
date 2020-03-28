@@ -1,0 +1,16 @@
+
+.myPlayer {
+    justify-content: center;
+    align-items: center;
+    float: none;
+    margin-left: 5vw;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.myFrame {
+    position: absolute;
+    top: -15.5px;
+    left: 5vw;
+}

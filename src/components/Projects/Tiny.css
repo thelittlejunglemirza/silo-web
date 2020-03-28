@@ -1,0 +1,20 @@
+.myPlayer2 {
+    justify-content: center;
+    align-items: center;
+    float: none;
+    margin-bottom: 40px;
+    position: relative;
+    margin-left: 3vw;
+    top: 0px;
+    left: -15px;
+}
+
+.myFrame2 {
+    position: absolute;
+    top: -135px;
+    left: 102px;
+    float: none;
+    margin-left: 3vw;
+    /* margin-top: 40px; */
+    transform: rotate(90deg);
+}

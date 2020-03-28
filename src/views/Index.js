@@ -74,7 +74,7 @@ class LandingPage extends React.Component {
                 <ExamplesNavbar/>
                 <LandingPageHeader/>
                 <div className="main">
-                    <div className="section section-dark text-center" style={{height: "100vh"}}>
+                    <div className="section section-dark text-center" style={{minHeight: "100vh"}}>
                         <Container>
                             <Row>
                                 <Col className="ml-auto mr-auto" md="8">
@@ -158,18 +158,23 @@ class LandingPage extends React.Component {
                                             </p>
                                             <Button className="btn-link" color="info" href="#pablo">
                                                 See more
-                                            </Button>
+                                            </Button>xw
                                         </div>
                                     </div>
                                 </Col>
                             </Row>
                         </Container>
                     </div>
-                    <div className="section section-white text-center" style={{height: "100vh"}}>
+                    <div className="section section-white text-center" style={{minHeight: "110vh"}}>
                     <Container>
-                      <Row>
+                        <h2 className="title">Our Work</h2>
+                        {/* <Row> */}
+                        
                         <Projects/>
-                      </Row>
+                            {/* <Appetize/> */}
+                            {/* <Tiny/> */}
+                        {/* </Row> */}
+                        {/* <CardContainer targetId="navi"/> */}
                     </Container>
                     </div>
                     <div className="section section-dark text-center" style={{paddingBottom: "0px"}}>
