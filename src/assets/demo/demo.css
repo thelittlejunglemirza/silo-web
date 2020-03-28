@@ -665,21 +665,39 @@
   font-family: Raleway, sans-serif;
 }
 
+.flipper {
+  justify-content: center;
+  align-items: center;
+}
 .cardContainer {
   padding-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 .cardBack {
+  justify-content: center;
+  align-items: center;
 }
 
 .flipperContainer {
   border-radius:35px;
 }
-.flipperContainer, .cardFront, .cardBack {
+
+.flipperContainerAppetize, .cardFrontAppetize, .cardBackAppetize {
   -webkit-perspective: 1000px;
           perspective: 1000px;
-	/* width: 300px;
-	height: 500px; */
-  /* position: relative; */
+	width: 271px;
+	height: 570px;
+  position: relative;
+  /* margin: 0 auto; */
+}
+
+.flipperContainerTiny, .cardFrontTiny, .cardBackTiny{
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+	width: 570px;
+	height: 300px;
+  position: relative;
   /* margin: 0 auto; */
 }
 .flipperContainer:hover .flipper, .flipperContainer.hover .flipper {
@@ -693,12 +711,11 @@
 	-webkit-transform-style: preserve-3d;
 	        transform-style: preserve-3d;
   /* border-radius:35px; */
-  /* position: absolute;
+  position: absolute;
   top:0;
   bottom:0;
   left:0;
-  right:0; */
-  /* margin:auto; */
+  right:0;
 }
 /* hide back of pane during swap */
 .cardFront, .cardBack {
@@ -727,4 +744,5 @@
   display: -ms-flexbox;
   display: flex;
   margin: 10px;
-}
+} 
+

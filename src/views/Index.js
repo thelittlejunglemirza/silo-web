@@ -61,8 +61,9 @@ class LandingPage extends React.Component {
                     <div ref={ (ref) => this.projectsRef=ref }></div>
                     <div className="section section-white text-center"
                         style={
-                            {height: "100vh"}
+                            {minHeight: "100vh"}
                     }>
+                        <h2 className="title">Our Work</h2>
                         <Container>
                             <Row>
                                 <Projects/>
