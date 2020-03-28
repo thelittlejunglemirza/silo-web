@@ -6,10 +6,13 @@ import  React, { useState, Component } from 'react';
 
 import {
     Row,
-    Button
+    Button,
+    Col
 } from "reactstrap";
 
-import Card from './FlipCard.js'
+// import Card from './FlipCard.js'
+import Appetize from './Appetize.js';
+import Tiny from './Tiny.js';
 
 
 class Projects extends Component {
@@ -34,8 +37,12 @@ class Projects extends Component {
         console.log("From project:" + this.state.flipState);
         return(
                 <>
-                    <Card targetId="navi" flip={this.state.flipState}/>
-                    <Button style={{top: "57vh", right: "7vh", position: "absolute", backgroundColor: "#51BDDA", border: "none"}} onClick={this.nextHandler}><i className="nc-icon nc-button-play"/></Button>
+                <Row>
+                    <Col><Appetize /></Col>
+                    <Col style={{paddingTop: "12vh"}}><Tiny /></Col>
+                </Row>
+                    {/* <Card targetId="navi" flip={this.state.flipState}/> */}
+                    {/* <Button style={{top: "57vh", right: "7vh", position: "absolute", backgroundColor: "#51BDDA", border: "none"}} onClick={this.nextHandler}><i className="nc-icon nc-button-play"/></Button> */}
                 </>
             );
     }

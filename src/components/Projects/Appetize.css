@@ -3,14 +3,14 @@
     justify-content: center;
     align-items: center;
     float: none;
-    margin-left: 5vw;
+    margin-left: 0vw;
     position: relative;
-    top: 0px;
-    left: 0px;
+    top: -20px;
+    left: 8px;
 }
 
 .myFrame {
     position: absolute;
     top: -15.5px;
-    left: 5vw;
+    left: -2px;
 }

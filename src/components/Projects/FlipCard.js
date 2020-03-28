@@ -3,52 +3,64 @@ import React from "react";
 import Background from '../../assets/img/silobg.jpg'
 
 
-import Appetize from './Appetize.js';
-import Tiny from './Tiny.js'
+// import Appetize from './Appetize.js';
+// import Tiny from './Tiny.js'
 
 // Styles
-const cardContainerStyles = { // width: 200,
-    minHeight: "80vh",
-    minWidth: "57vw",
+const cardContainerStylesTiny = {
+    // height: 300,
+    // width: 500,
+    // minHeight: "80vh",
+    // minWidth: "57vw",
     background: "')",
     // background:'#0d181e',
     borderRadius: 35,
     boxShadow: "1px 1px 10px #444"
 };
-const imgContainerStyles = {
-    backgroundColor: "#fff",
-    height: "35%",
-    margin: 0,
-    borderTopRightRadius: 35,
-    borderTopLeftRadius: 35,
-    background: "#444",
-    backgroundSize: "cover"
-}
-
-const titleStyles = {
-    color: "#555",
-    fontWeight: "100",
-    outline: "none",
-    margin: "0px",
-    display: "inline-block",
-    width: "100%",
-    textAlign: "center",
-    position: "relative",
-    top: "-75px"
-};
-const subTitleStyles = {
-    position: "relative",
-    top: "-95px",
-    textAlign: "center",
-    fontWeight: "100",
-    color: "#888"
-};
-
-const cardBackStyles = {
+const cardContainerStylesAppetize = {
     // height: 500,
     // width: 300,
-    minHeight: "80vh",
-    minWidth: "57vw",
+    // minHeight: "80vh",
+    // minWidth: "57vw",
+    background: "')",
+    // background:'#0d181e',
+    borderRadius: 35,
+    boxShadow: "1px 1px 10px #444"
+};
+// const imgContainerStyles = {
+//     backgroundColor: "#fff",
+//     // height: "35%",
+//     margin: 0,
+//     borderTopRightRadius: 35,
+//     borderTopLeftRadius: 35,
+//     background: "#444",
+//     backgroundSize: "cover"
+// }
+
+// const titleStyles = {
+//     color: "#555",
+//     fontWeight: "100",
+//     outline: "none",
+//     margin: "0px",
+//     display: "inline-block",
+//     // width: "100%",
+//     textAlign: "center",
+//     position: "relative",
+//     top: "-75px"
+// };
+// const subTitleStyles = {
+//     position: "relative",
+//     top: "-95px",
+//     textAlign: "center",
+//     fontWeight: "100",
+//     color: "#888"
+// };
+
+const cardBackStylesTiny = {
+    // height: 300,
+    // width: 500,
+    // minHeight: "80vh",
+    // minWidth: "57vw",
     position: "absolute",
     top: "0",
     bottom: "0",
@@ -59,30 +71,49 @@ const cardBackStyles = {
     boxShadow: "1px 1px 35px #444",
     // background: "')",
     // background: '#484E52',
-    background: "')",
+    // background: "')",
     backgroundSize: "cover",
     backgroundPosition: "right"
 }
-const madeByStyles = {
-    color: "#fff",
-    opacity: ".5",
-    textAlign: "center",
-    padding: "0px"
+const cardBackStylesAppetize = {
+    // height: 1000,
+    // width: 300,
+    // minHeight: "80vh",
+    // minWidth: "57vw",
+    position: "absolute",
+    top: "0",
+    bottom: "0",
+    left: "0",
+    right: "0",
+    paddingTop: "20px",
+    borderRadius: "35px",
+    boxShadow: "1px 1px 35px #444",
+    // background: "')",
+    // background: '#484E52',
+    // background: "')",
+    backgroundSize: "cover",
+    backgroundPosition: "right"
 }
+// const madeByStyles = {
+//     color: "#fff",
+//     opacity: ".5",
+//     textAlign: "center",
+//     padding: "0px"
+// }
 
-const imgStyles = {
-    width: 200,
-    borderTopRightRadius: 35,
-    borderTopLeftRadius: 35
-}
+// const imgStyles = {
+//     width: 200,
+//     borderTopRightRadius: 35,
+//     borderTopLeftRadius: 35
+// }
 
-const cardBackImgStyles = {
-    height: "100%",
-    width: "100%",
-    borderRadius: 35,
-    position: "absolute"
+// const cardBackImgStyles = {
+//     // height: "100%",
+//     // width: "100%",
+//     borderRadius: 35,
+//     position: "absolute"
 
-}
+// }
 
 // Components
 // class CardImg extends React.Component {
@@ -143,21 +174,31 @@ class Card extends React.Component {
         }
     }
     componentWillMount() {
-
-    }
-    render() {
-        console.log("From card:" + this.state.flip);
+        if (this.props.name == "Tiny")
+        {
+            this.setState({
+                backStyle: cardBackStylesTiny,
+                frontStyle: cardContainerStylesTiny,
+            })
+        } else {
+            this.setState({
+                backStyle: cardBackStylesAppetize,
+                frontStyle: cardContainerStylesAppetize,
+            })
+        }
         
+    }
+    render() {        
         return (
-            <div className="flipperContainer">
+            <div className={"flipperContainer flipperContainer" + this.props.name}>
                 <div className="flipper">
-                    <div style={cardContainerStyles}
-                        className="cardFront cardContainer">
-                        <Appetize />
+                    <div style={this.state.frontStyle}
+                        className={"cardFront cardContainer " + " cardFront" + this.props.name + " cardContainer"  + this.props.name}>
+                        {this.props.front}
                     </div>
-                    <div style={cardBackStyles}
-                        className="cardBack">
-                        <Tiny />
+                    <div style={this.state.backStyle}
+                        className={"cardBack cardBack" + this.props.name}>
+                        {this.props.back}
                     </div>
                 </div>
             </div>

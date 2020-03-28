@@ -2,19 +2,24 @@
     justify-content: center;
     align-items: center;
     float: none;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     position: relative;
-    margin-left: 3vw;
-    top: 0px;
-    left: -15px;
+    /* margin-left: 3vw; */
+    top: -13px;
+    left: 9px;
 }
 
 .myFrame2 {
     position: absolute;
-    top: -135px;
-    left: 102px;
+    top: -142px;
+    left: 132px;
     float: none;
-    margin-left: 3vw;
+    /* margin-left: 3vw; */
     /* margin-top: 40px; */
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
+}
+
+
+img.wrap {
+    float: left
 }

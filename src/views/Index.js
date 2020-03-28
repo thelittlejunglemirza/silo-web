@@ -165,7 +165,7 @@ class LandingPage extends React.Component {
                             </Row>
                         </Container>
                     </div>
-                    <div className="section section-white text-center" style={{minHeight: "110vh"}}>
+                    <div className="section section-white text-center" style={{minHeight: "100vh"}}>
                     <Container>
                         <h2 className="title">Our Work</h2>
                         {/* <Row> */}
