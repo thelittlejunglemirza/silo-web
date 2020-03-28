@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "classnames": "2.2.6",
+    "email-validator": "^2.0.4",
     "emailjs": "^2.2.0",
     "emailjs-com": "^2.4.1",
     "moment": "2.24.0",
@@ -18,15 +19,17 @@
     "react-dom": "^16.8.6",
     "react-image-overlay": "^1.0.5",
     "react-mobile-store-button": "0.0.6",
+    "react-fade-in": "^0.1.8",
     "react-responsive-carousel": "^3.1.51",
     "react-router": "5.0.1",
     "react-router-dom": "5.0.1",
     "react-scripts": "3.0.1",
     "react-scroll-locky": "^1.5.0",
     "react-video": "^1.5.3",
-    "reactstrap": "8.0.0",
     "redux": "^4.0.5",
     "video-react": "^0.14.1"
+    "react-visibility-sensor": "^5.1.1",
+    "reactstrap": "8.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

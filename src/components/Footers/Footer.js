@@ -20,47 +20,22 @@
 import React from "react";
 
 // reactstrap components
-import { Row, Container } from "reactstrap";
+import { Row, Container, Col } from "reactstrap";
 
 function DemoFooter() {
   return (
     <footer className="footer section-dark footer-black footer-white">
       <Container>
         <Row>
-          <nav className="footer-nav">
-            <ul>
-              <li>
-                <a
-                  href="https://www.creative-tim.com?ref=pkr-footer"
-                  target="_blank"
-                >
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://blog.creative-tim.com/?ref=pkr-footer"
-                  target="_blank"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.creative-tim.com/license?ref=pkr-footer"
-                  target="_blank"
-                >
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <Col style={{textAlign:'center'}}>
           <div className="credits ml-auto">
             <span className="copyright">
-              © {new Date().getFullYear()}, made with{" "}
+              (© {new Date().getFullYear()}) made with{" "}
               <i className="fa fa-heart heart" /> by Software Silo
             </span>
           </div>
+          </Col>
+
         </Row>
       </Container>
     </footer>
