@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
-import {
-    Row,
-    Col,
-} from 'reactstrap';
+import React from 'react';
 
-import Overlay from 'react-image-overlay';
+// import Overlay from 'react-image-overlay';
 
 import { Player } from 'video-react';
 import "video-react/dist/video-react.css";
 
 import tsVid from '../../assets/vid/ts.mp4'
-import tsPoster from '../../assets/img/projects/ts.png'
+// import tsPoster from '../../assets/img/projects/ts.png'
 import tsLogo from '../../assets/img/ts-logo.png'
 import iphone from '../../assets/img/iphone.png'
 
@@ -19,7 +15,7 @@ import Card from './FlipCard.js';
 
 import './Tiny.css'
 
-class Tiny extends Component {
+class Tiny extends React.Component {
     render() {
         return (
             <>
@@ -34,13 +30,17 @@ class Tiny extends Component {
                                 fluid={false}
                                 width={550}
                                 className='myPlayer2'
-                                />
+                                preload="auto"
+                                loop={true}
+                                poster={require('../../assets/img/projects/ts_poster.jpg')}
+
+                            />
                             <img src={iphone} className='myFrame2' width={310} height={585} alt='frame'/>
                         </>
                     }
                     back={
                         <>
-                            <img src={tsLogo} alt='frame' class="wrap" style={{maxHeight:"120px", maxWidth: "260px", paddingLeft: "20px", paddingRight: "20px"}}/>
+                            <img src={tsLogo} alt='frame' className="wrap" style={{maxHeight:"120px", maxWidth: "260px", paddingLeft: "20px", paddingRight: "20px"}}/>
                             <div 
                                 style={{
                                     // backgroundColor:"#fccc8d",

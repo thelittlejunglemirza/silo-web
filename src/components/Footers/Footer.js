@@ -30,7 +30,7 @@ function DemoFooter() {
           <Col style={{textAlign:'center'}}>
           <div className="credits ml-auto">
             <span className="copyright">
-              (© {new Date().getFullYear()}) made with{" "}
+              (v1.0.0 © {new Date().getFullYear()}) made with{" "}
               <i className="fa fa-heart heart" /> by Software Silo
             </span>
           </div>

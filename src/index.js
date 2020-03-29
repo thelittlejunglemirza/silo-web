@@ -25,7 +25,7 @@ import "assets/css/bootstrap.min.css";
 import "assets/scss/paper-kit.scss";
 import "assets/demo/demo.css";
 // pages
-import Index from "views/Index.js";
+import Index from "./views/Index.js";
 // import LandingPage from "views/examples/LandingPage.js";
 // import ProfilePage from "views/examples/ProfilePage.js";
 // import RegisterPage from "views/examples/RegisterPage.js";

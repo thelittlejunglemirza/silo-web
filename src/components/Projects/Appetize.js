@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     Row,
     Col,
 } from 'reactstrap';
 import MobileStoreButton from 'react-mobile-store-button';
-import Overlay from 'react-image-overlay'
+// import Overlay from 'react-image-overlay'
 
 import appetizeLogo from '../../assets/img/appetize-logo.png'
 import appetizeVid from '../../assets/vid/appetize.mp4'
 import iphone from '../../assets/img/iphone.png'
+
 
 import { Player } from 'video-react';
 import "video-react/dist/video-react.css";
@@ -17,7 +18,7 @@ import './Appetize.css'
 
 import Card from './FlipCard.js'
 
-class Appetize extends Component {
+class Appetize extends React.Component {
     render() {
         const iOSUrl = 'https://apps.apple.com/ca/app/appetize/id1492938675';
         const droidUrl = 'https://play.google.com/store/apps/details?id=com.appetizevm.menuapp';
@@ -33,7 +34,10 @@ class Appetize extends Component {
                                 src={appetizeVid}
                                 fluid={false}
                                 width={250}
+                                poster={require('../../assets/img/projects/appetize-loadimg.jpg')}
                                 className='myPlayer'
+                                preload='auto'
+                                loop={true}
                             />
                             <img src={iphone} className='myFrame' width={277} alt='frame'/>
                         </>
@@ -77,7 +81,7 @@ class Appetize extends Component {
                                             store="ios"
                                             url={iOSUrl}
                                             linkProps={{ title: 'iOS Store Button' }}
-                                            height="50px"
+                                            height={50}
                                             />
                                     </Col>
                                     <Col tyle={{margin: "0", padding:"0px"}}>

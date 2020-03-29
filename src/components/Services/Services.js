@@ -15,13 +15,11 @@ class Services extends React.Component {
         super(props);
 
         this.state = {
-            textNum: -1,
             visibleFlag0: false,
             hasRendered0: false,
             visibleFlag1: false,
             hasRendered1: false
         }
-
     }
 
     componentIsVisible(isVisible, num) {
@@ -64,9 +62,9 @@ class Services extends React.Component {
                                 <Row>
                                     <Col md="6">
                                         <FadeIn delay={300}>
-                                            <div className="info">
+                                            <div className="info" style={{paddingTop: '3vh', paddingBottom: '3vh'}}>
                                                 <div className="icon icon-info">
-                                                    <i class="fas fa-users"></i>
+                                                    <i className="fas fa-users"></i>
                                                 </div>
                                                 <div className="description">
                                                     <h4 className="info-title" style={{marginTop: 0}}>Access to Experts</h4>
@@ -79,9 +77,9 @@ class Services extends React.Component {
                                     </Col>
                                     <Col md="6">
                                         <FadeIn delay={400}>
-                                            <div className="info">
+                                            <div className="info" style={{paddingTop: '3vh', paddingBottom: '3vh'}}>
                                                 <div className="icon icon-info">
-                                                    <i class="fas fa-piggy-bank"></i>
+                                                    <i className="fas fa-piggy-bank"></i>
                                                 </div>
                                                 <div className="description">
                                                     <h4 className="info-title" style={{marginTop: 0}}>Cost Savings</h4>
@@ -96,9 +94,9 @@ class Services extends React.Component {
                                 <Row>
                                     <Col md="6">
                                         <FadeIn delay={300}>
-                                            <div className="info" style={{paddingTop: '6vh'}}>
+                                            <div className="info" style={{paddingTop: '3vh', paddingBottom: '3vh'}}>
                                                 <div className="icon icon-info">
-                                                    <i class="fas fa-tree"></i>
+                                                    <i className="fas fa-tree"></i>
                                                 </div>
                                                 <div className="description">
                                                     <h4 className="info-title" style={{marginTop: 0}}>Resources</h4>
@@ -111,9 +109,9 @@ class Services extends React.Component {
                                     </Col>
                                     <Col md="6">
                                         <FadeIn delay={400}>
-                                            <div className="info" style={{paddingTop: '6vh'}}>
+                                            <div className="info" style={{paddingTop: '3vh', paddingBottom: '3vh'}}>
                                                 <div className="icon icon-info">
-                                                    <i class="fas fa-building"></i>
+                                                    <i className="fas fa-building"></i>
                                                 </div>
                                                 <div className="description">
                                                     <h4 className="info-title" style={{marginTop: 0}}>Cooperation Model</h4>
@@ -157,9 +155,9 @@ class Services extends React.Component {
                                     <Row>
                                         <Col md="6">
                                             <FadeIn delay={300}>
-                                                <div className="info">
+                                                <div className="info" style={{paddingTop: '3vh', paddingBottom: '3vh'}}>
                                                     <div className="icon icon-info">
-                                                        <i class="fas fa-mobile"></i>
+                                                        <i className="fas fa-mobile"></i>
                                                     </div>
                                                     <div className="description">
                                                         <h4 className="info-title" style={{marginTop: 0}}>Mobile Apps</h4>
@@ -172,9 +170,9 @@ class Services extends React.Component {
                                         </Col>
                                         <Col md="6">
                                             <FadeIn delay={400}>
-                                                <div className="info">
+                                                <div className="info" style={{paddingTop: '3vh', paddingBottom: '3vh'}}>
                                                     <div className="icon icon-info">
-                                                        <i class="fas fa-laptop"></i>
+                                                        <i className="fas fa-laptop"></i>
                                                     </div>
                                                     <div className="description">
                                                         <h4 className="info-title" style={{marginTop: 0}}>Web Apps</h4>
@@ -189,9 +187,9 @@ class Services extends React.Component {
                                     <Row>
                                         <Col md="6">
                                             <FadeIn delay={300}>
-                                                <div className="info" style={{paddingTop: '6vh'}}>
+                                                <div className="info" style={{paddingTop: '3vh', paddingBottom: '3vh'}}>
                                                     <div className="icon icon-info">
-                                                        <i class="fas fa-paint-brush"></i>
+                                                        <i className="fas fa-paint-brush"></i>
                                                     </div>
                                                     <div className="description">
                                                         <h4 className="info-title" style={{marginTop: 0}}>UX/UI Design</h4>
@@ -204,9 +202,9 @@ class Services extends React.Component {
                                         </Col>
                                         <Col md="6">
                                             <FadeIn delay={400}>
-                                                <div className="info" style={{paddingTop: '6vh'}}>
+                                                <div className="info" style={{paddingTop: '3vh', paddingBottom: '3vh'}}>
                                                     <div className="icon icon-info">
-                                                        <i class="fas fa-brain"></i>
+                                                        <i className="fas fa-brain"></i>
                                                     </div>
                                                     <div className="description">
                                                         <h4 className="info-title" style={{marginTop: 0}}>Artificial Intelligence</h4>

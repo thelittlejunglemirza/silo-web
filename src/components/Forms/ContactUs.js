@@ -239,7 +239,7 @@ class ContactUs extends React.Component {
                                                                 </div>
                                                                 <div>
                                                                     <br/>
-                                                                    <p className="description text-center">Our email service is down at the moment, please message us directly at <b style={{fontWeight: 'bold',color: '#51BCDA'}}>kai@softwaresilo.org</b></p>
+                                                                    <p className="description text-center">Our email service is down at the moment, please message us directly at <b style={{fontWeight: 'bold',color: '#51BCDA'}}>contact@softwaresilo.org</b></p>
                                                                 </div>
                                                             </FadeIn>
                                                         ):

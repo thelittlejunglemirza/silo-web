@@ -21,7 +21,6 @@ import React from "react";
 // reactstrap components
 import {
     Container,
-    Row,
 } from "reactstrap";
 
 // core components
@@ -63,11 +62,8 @@ class LandingPage extends React.Component {
                         style={
                             {minHeight: "100vh"}
                     }>
-                        <h2 className="title">Our Work</h2>
                         <Container>
-                            <Row>
-                                <Projects/>
-                            </Row>
+                            <Projects/>
                         </Container>
                     </div>
                     <div ref={ (ref) => this.contactRef=ref }></div>

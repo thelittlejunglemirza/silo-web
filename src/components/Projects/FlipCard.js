@@ -1,6 +1,6 @@
 import React from "react";
 
-import Background from '../../assets/img/silobg.jpg'
+// import Background from '../../assets/img/silobg.jpg'
 
 
 // import Appetize from './Appetize.js';
@@ -174,7 +174,7 @@ class Card extends React.Component {
         }
     }
     componentWillMount() {
-        if (this.props.name == "Tiny")
+        if (this.props.name === "Tiny")
         {
             this.setState({
                 backStyle: cardBackStylesTiny,
@@ -193,7 +193,7 @@ class Card extends React.Component {
             <div className={"flipperContainer flipperContainer" + this.props.name}>
                 <div className="flipper">
                     <div style={this.state.frontStyle}
-                        className={"cardFront cardContainer " + " cardFront" + this.props.name + " cardContainer"  + this.props.name}>
+                        className={`cardFront cardContainer cardFront${this.props.name} cardContainer${this.props.name}`}>
                         {this.props.front}
                     </div>
                     <div style={this.state.backStyle}
