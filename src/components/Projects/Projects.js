@@ -54,11 +54,10 @@ class Projects extends React.Component {
         this.setState({
             flipState: !this.state.flipState
         })
-        console.log("From handler:" + this.state.flipState);
+        // console.log("From handler:" + this.state.flipState);
     }
 
     render() {
-        console.log("From project:" + this.state.flipState, this.state.width);
         return(
                 <>
                 

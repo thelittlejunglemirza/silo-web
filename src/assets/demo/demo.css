@@ -737,12 +737,13 @@
 	        transform: rotateY(180deg);
 }
 
-
-
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 10px;
 } 
+
+div#preload { display: none; }
+
 

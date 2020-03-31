@@ -34,7 +34,7 @@ class Appetize extends React.Component {
                                 src={appetizeVid}
                                 fluid={false}
                                 width={250}
-                                poster={require('../../assets/img/projects/appetize-loadimg.jpg')}
+                                // poster={require('../../assets/img/projects/appetize-poster.jpg')}
                                 className='myPlayer'
                                 preload='auto'
                                 loop={true}

@@ -1,11 +1,5 @@
 import React from "react";
 
-// import Background from '../../assets/img/silobg.jpg'
-
-
-// import Appetize from './Appetize.js';
-// import Tiny from './Tiny.js'
-
 // Styles
 const cardContainerStylesTiny = {
     // height: 300,

@@ -6,11 +6,8 @@ import { Player } from 'video-react';
 import "video-react/dist/video-react.css";
 
 import tsVid from '../../assets/vid/ts.mp4'
-// import tsPoster from '../../assets/img/projects/ts.png'
 import tsLogo from '../../assets/img/ts-logo.png'
 import iphone from '../../assets/img/iphone.png'
-
-
 import Card from './FlipCard.js';
 
 import './Tiny.css'
