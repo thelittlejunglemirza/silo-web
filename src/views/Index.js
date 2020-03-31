@@ -20,36 +20,53 @@ import React from "react";
 
 // reactstrap components
 import {
-    Button,
-    Card,
-    CardBody,
-    CardFooter,
-    CardTitle,
-    Form,
-    Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
     Container,
-    Row,
-    Col
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/IndexNavbar.js";
-import LandingPageHeader from "components/Headers/IndexHeader.js";
-import DemoFooter from "components/Footers/Footer.js";
-import emailjs from 'emailjs-com';
+import IndexNavbar from "components/Navbars/IndexNavbar.js";
+import IndexHeader from "components/Headers/IndexHeader.js";
+import Footer from "components/Footers/Footer.js";
 import ContactUs from 'components/Forms/ContactUs.js';
-
 import Projects from 'components/Projects/Projects.js';
+import Services from 'components/Services/Services.js';
+import { templateId } from "env";
+
+const imageAssets = [
+    require('../assets/img/gifs/loadAni1.gif'),
+    // IndexHeader
+    require('../assets/img/silobg.jpg'),
+    require('../assets/img/SiloLogo.png'),
+    // ContactUs
+    require("../assets/img/faces/arya.jpg"),
+    require("../assets/img/faces/nader.jpg"),
+    require("../assets/img/faces/kai.jpg"),
+    // Appetize
+    require('../assets/img/appetize-logo.png'),
+    require('../assets/img/iphone.png' ),
+    require('../assets/img/projects/appetize-poster.jpg'),
+    // Tiny
+    require('../assets/img/ts-logo.png'),
+    require('../assets/img/projects/ts_poster.jpg'),
+]
+// require('../assets/vid/ts.mp4'),
+// require('../assets/vid/appetize.mp4'),
 
 class LandingPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            emailSent: false
+
+        this.state ={
+            imgsReady: false,
+            loadIconReady: false
         };
+
+        this.contactRef=null //used for scrolling to contact form
+        this.projectsRef=null //used for scrolling to projects page
+        this.servicesRef=null //used for scrolling to services page
+
+        this.imgLoadCount = 0;
+        
 
         // These next three lines might be unessary
         document.documentElement.classList.remove("nav-open");
@@ -57,223 +74,101 @@ class LandingPage extends React.Component {
         document.body.classList.remove("profile-page");
     }
 
-    handleEmailFormSubmit = (event) => {
-        event.preventDefault();
+    componentDidMount() {
+        // let tempImgs = [];
 
-        emailjs.sendForm('default_service', 'template_1KGjDScA', event.target, 'user_v0igoBzsR3441mcbVQAkx').then((result) => {
-            alert('sent');
-            this.setState({emailSent: true})
-        }, (error) => {
-            console.log(error.text);
-        });
+        // var preLoad = new Promise((resolve, reject) => {
+        //     imageAssets.forEach((value, index, array) => {      
+        //         console.log(value);
+                      
+        //         const img = new Image();
+        //         img.src = value; // by setting an src, you trigger browser download
+                
+        //         img.onload = () => {
+        //             tempImgs.push(img);
+        //         }
+
+        //         if (index === array.length -1) resolve();
+        //     });
+        // });
+        
+        // preLoad.then(() => {
+        //     this.setState({imgsReady: true, imgs: tempImgs});
+        // });
+    }    
+
+    handleImageLoaded() {
+        this.imgLoadCount++;
+        console.log(this.imgLoadCount);
+        
+
+        if(this.imgLoadCount >= imageAssets.length) {
+            this.setState({imgsReady: true})
+        }
+        // else if(src==='assets/img/gifs/loadAni1.gif' && !this.state.loadIconReady) {
+        //     this.setState({loadIconReady: true})
+        // }
     }
+    
+    handleImageErrored() {
+        console.log(`failed to load img ${this.imgLoadCount+1}`);
+    }
+
+    // scroll handlers
+    scrollToServicesRef = () => window.scrollTo(0, this.servicesRef.offsetTop)
+    scrollToProjectRef = () => window.scrollTo(0, this.projectsRef.offsetTop)
+    scrollToContactRef = () => window.scrollTo(0, this.contactRef.offsetTop)
 
     render() {
         return (
             <div>
-                <ExamplesNavbar/>
-                <LandingPageHeader/>
-                <div className="main">
-                    <div className="section section-dark text-center" style={{height: "100vh"}}>
-                        <Container>
-                            <Row>
-                                <Col className="ml-auto mr-auto" md="8">
-                                    <h2 className="title">Let's talk product</h2>
-                                    <h5 className="description">
-                                        We have developed our expertise in Multiple Technologies, as a Core Development Organisation. We work alongside our customers throughout the entire process, identifying their needs at the outset and defining functionalities until the product is complete. Our aim is to deliver desired results.
-                                    </h5>
-                                    <br/>
-                                    <Button className="btn-round" color="info" href="#pablo"
-                                        onClick={
-                                            e => e.preventDefault()
-                                    }>
-                                        See Details
-                                    </Button>
-                                </Col>
-                            </Row>
-                            <br/>
-                            <br/>
-                            <Row>
-                                <Col md="3">
-                                    <div className="info">
-                                        <div className="icon icon-info">
-                                            <i className="nc-icon nc-album-2"/>
-                                        </div>
-                                        <div className="description">
-                                            <h4 className="info-title">Beautiful Gallery</h4>
-                                            <p className="description">
-                                                Spend your time generating new ideas. You don't have to
-                                                                                                                        think of implementing.
-                                            </p>
-                                            <Button className="btn-link" color="info" href="#pablo">
-                                                See more
-                                            </Button>
-                                        </div>
-                                    </div>
-                                </Col>
-                                <Col md="3">
-                                    <div className="info">
-                                        <div className="icon icon-info">
-                                            <i className="nc-icon nc-bulb-63"/>
-                                        </div>
-                                        <div className="description">
-                                            <h4 className="info-title">New Ideas</h4>
-                                            <p>
-                                                Larger, yet dramatically thinner. More powerful, but
-                                                                                                                        remarkably power efficient.
-                                            </p>
-                                            <Button className="btn-link" color="info" href="#pablo">
-                                                See more
-                                            </Button>
-                                        </div>
-                                    </div>
-                                </Col>
-                                <Col md="3">
-                                    <div className="info">
-                                        <div className="icon icon-info">
-                                            <i className="nc-icon nc-chart-bar-32"/>
-                                        </div>
-                                        <div className="description">
-                                            <h4 className="info-title">Statistics</h4>
-                                            <p>
-                                                Choose from a veriety of many colors resembling sugar
-                                                                                                                        paper pastels.
-                                            </p>
-                                            <Button className="btn-link" color="info" href="#pablo">
-                                                See more
-                                            </Button>
-                                        </div>
-                                    </div>
-                                </Col>
-                                <Col md="3">
-                                    <div className="info">
-                                        <div className="icon icon-info">
-                                            <i className="nc-icon nc-sun-fog-29"/>
-                                        </div>
-                                        <div className="description">
-                                            <h4 className="info-title">Delightful design</h4>
-                                            <p>
-                                                Find unique and handmade delightful designs related items
-                                                                                                                        directly from our sellers.
-                                            </p>
-                                            <Button className="btn-link" color="info" href="#pablo">
-                                                See more
-                                            </Button>
-                                        </div>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </div>
-                    <div className="section section-white text-center" style={{height: "100vh"}}>
-                    <Container>
-                      <Row>
-                        <Projects/>
-                      </Row>
-                    </Container>
-                    </div>
-                    <div className="section section-dark text-center" style={{paddingBottom: "0px"}}>
-                        <Container>
-                            <h2 className="title">Say Hello!</h2>
-                            <Row>
-                                <Col md="4">
-                                    <Card className="card-profile card-plain">
-                                        <div className="card-avatar">
-                                            <a href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <img alt="..."
-                                                    src={
-                                                        require("assets/img/faces/arya.jpg")
-                                                    }/>
-                                            </a>
-                                        </div>
-                                        <CardBody>
-                                            <a href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <div className="author">
-                                                    <CardTitle tag="h4">Arya Rashtchian</CardTitle>
-                                                    <h6 className="card-category">Product Manager</h6>
-                                                </div>
-                                            </a>
-                                            <p className="card-description text-center">
-                                                Teamwork is so important that it is virtual.
-                                            </p>
-                                        </CardBody>
-                                    </Card>
-                                </Col>
-                                <Col md="4">
-                                    <Card className="card-profile card-plain">
-                                        <div className="card-avatar">
-                                            <a href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <img alt="..."
-                                                    src={
-                                                        require("assets/img/faces/nader.jpg")
-                                                    }/>
-                                            </a>
-                                        </div>
-                                        <CardBody>
-                                            <a href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <div className="author">
-                                                    <CardTitle tag="h4">Nader Samadyan</CardTitle>
-                                                    <h6 className="card-category">Lead Architect</h6>
-                                                </div>
-                                            </a>
-                                            <p className="card-description text-center">
-                                                A group becomes a team when each member is sure enough.
-                                            </p>
-                                        </CardBody>
-                                    </Card>
-                                </Col>
-                                <Col md="4">
-                                    <Card className="card-profile card-plain">
-                                        <div className="card-avatar">
-                                            <a href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <img alt="..."
-                                                    src={
-                                                        require("assets/img/faces/kai.jpg")
-                                                    }/>
-                                            </a>
-                                        </div>
-                                        <CardBody>
-                                            <a href="#pablo"
-                                                onClick={
-                                                    e => e.preventDefault()
-                                            }>
-                                                <div className="author">
-                                                    <CardTitle tag="h4">Kai Sackville-Hii</CardTitle>
-                                                    <h6 className="card-category">Lead Architect</h6>
-                                                </div>
-                                            </a>
-                                            <p className="card-description text-center">
-                                                The strength of the team is the strength of each member is the team.
-                                            </p>
-                                        </CardBody>
-                                    </Card>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </div>
-                      <ContactUs handleEmailFormSubmit={
-                          (e) => this.handleEmailFormSubmit(e)
-                      }
-                      emailSent={
-                          this.state.emailSent
-                      }/>
-                </div>
-                <DemoFooter/>
+                { this.state.imgsReady ?
+                    (   <>
+                            <IndexNavbar 
+                                scrollHandler0={this.scrollToServicesRef} 
+                                scrollHandler1={this.scrollToProjectRef} 
+                                scrollHandler2={this.scrollToContactRef}
+                            />
+                            <IndexHeader 
+                                scrollHandler={this.scrollToContactRef}
+                            />
+                            <div className="main">
+                                <div ref={ (ref) => this.servicesRef=ref }></div>
+                                <Services/>
+                                <div ref={ (ref) => this.projectsRef=ref }></div>
+                                <div className="section section-white text-center"
+                                    style={
+                                        {minHeight: "100vh"}
+                                }>
+                                    <Container>
+                                        <Projects/>
+                                    </Container>
+                                </div>
+                                <div ref={ (ref) => this.contactRef=ref }></div>
+                                <ContactUs/>
+                            </div>
+                            <Footer/>
+                        </>
+                    ):
+                    (
+                        <>
+                            <div style={{display: 'flex', justifyContent: 'center', alignItems:'center'}}>
+                                <img src={require('../assets/img/gifs/loadAni1.gif')}/>
+                            </div>
+                            <div id='preload'>
+                                {
+                                    imageAssets.map((url) =>
+                                        <img 
+                                            src={url} 
+                                            onLoad={this.handleImageLoaded.bind(this)}
+                                            onError={this.handleImageErrored.bind(this)}
+                                        />
+                                    )
+                                }
+                            </div>
+                        </>
+                    )
+                }
             </div>
         );
     }
