@@ -9,7 +9,7 @@
     "emailjs": "^2.2.0",
     "emailjs-com": "^2.4.1",
     "moment": "2.24.0",
-    "node-sass": "4.12.0",
+    "node-sass": "7.0.0",
     "nouislider": "13.1.5",
     "react": "16.8.6",
     "react-bootstrap-switch": "15.5.3",
